@@ -5,25 +5,25 @@ var pokemonRepository = (function() {
   //API-Adress:
   var apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
   //Var to hide/show:
-  var $modalContainer = $('#modal-container');     //jquery formatting
+  var $modalContainer = $('#modal-container');     //jquery formatting #1
   //details-menu var:
-  var $detailsMenu = $('#details-menu');      //jquery formatting
+  var $detailsMenu = $('#details-menu');      //jquery formatting  #2
 
   //add-list-item function:
   function addListItem(pokemon) {
 
      //creating elements on DOM
-     //formatting changed to jquery
+     //formatting changed to jquery #3
     var $p = $('<p>' + pokemon.name + '</p>');
     var $infoButton = $('<button class="info-button">view details</button>');
     var $li = $('<li class="list-item"></li>');
     var $ul = $('<ul class="pokemon-list"></ul>');
 
-    //appending them to DOM (formatting in jquery)
+    //appending them to DOM (formatting in jquery) #4
 
     $li.append($p);
     $li.append($infoButton);
-    $ul.appendChild($li);
+    $ul.append($li);
     $infoButton.on('click', function(event) {
       showDetails(pokemon);
     });
@@ -49,7 +49,7 @@ var pokemonRepository = (function() {
 
   //load pokemons from API
   function loadList() {
-    return $.ajax(apiUrl).then(function (response) {      //jquery format
+    return $.ajax(apiUrl).then(function (response) {      //jquery format #5
       response.results.forEach(function (item) {
         var pokemon = {
           name: item.name,
@@ -64,7 +64,7 @@ var pokemonRepository = (function() {
 
   //loading the details into pokemon
   function loadDetails(item) {
-    return $.ajax(item.detailsUrl).then(function (response) {     //jquery format
+    return $.ajax(item.detailsUrl).then(function (response) {     //jquery format #6
       item.imageUrl = response.sprites.front_default;
       item.height = response.height;
       item.types = response.types.map(function (item) {return ' ' + item.type.name;
@@ -80,7 +80,7 @@ var pokemonRepository = (function() {
   function showModal(item) {
     $modalContainer.innerHTML = '';
     //creating the modal div:
-    //in jquery format
+    //in jquery format   #6
     var modal = $('<div class="modal"></div>');
 
     //adding html elements to the modal container:
@@ -105,16 +105,16 @@ var pokemonRepository = (function() {
 
 //hides modal when 'close' button is clicked
   function hideModal() {
-    $('#modal-container').removeClass('is-visible');  //remove class funtion (jquery)
+    $('#modal-container').removeClass('is-visible');  //remove class funtion (jquery)  #7
   }
-  //hide modal when ESC on keyboard is pressed down
+  //hide modal when ESC on keyboard is pressed down  #8
   $(window).on('keydown', (e) => {
     if (e.key === 'Escape' && $('#modal-container').hasClass('is-visible')) {
       hideModal();
     }
   });
-  //hide modal if clicked outside of it
-  $('#modalContainer).on('click', (e) => {
+  //hide modal if clicked outside of it  #9
+  $('#modal-container).on('click', (e) => {
     // Since this is also triggered when clicking INSIDE the modal container,
     // We only want to close if the user clicks directly on the overlay
     var target = e.target;
