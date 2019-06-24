@@ -1,4 +1,4 @@
-on//wrapping in IIFE
+//wrapping in IIFE
 var pokemonRepository = (function() {
   //defining an array of pokemon objects
   var repository = [];
@@ -95,7 +95,7 @@ var pokemonRepository = (function() {
     var imageElement = $('<img class="modal-image"></img>');
     $imageElement.attr("src",item.imageUrl);    //attribute set in jquery format
     //creating element for type
-    var typesElement = $('<p>' +'Type: ' +item.types.join(', ')');
+    var typesElement = $('<p>' +'Type: ' +item.types.join(', '));
 
     //appending element to modal and modal to modal container
     modal.append(closeButtonElement).append(nameElement).append(imageElement).append(typesElement).append(heightElement);  //chaining
@@ -114,7 +114,7 @@ var pokemonRepository = (function() {
     }
   });
   //hide modal if clicked outside of it  #9
-  $('#modal-container).on('click', (e) => {
+  $('#modal-container').on('click', (e) => {
     // Since this is also triggered when clicking INSIDE the modal container,
     // We only want to close if the user clicks directly on the overlay
     var target = e.target;
