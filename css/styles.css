@@ -38,11 +38,11 @@ img.modal-image {
   z-index: 1;
 }
 
-.modal {              /* shown with modal-container.is-visible via appendChild */
+.modal-dialog {              /* shown with modal-container.is-visible via appendChild */
   margin: auto;
   margin-top: 60px;
   padding: 5%;
-  width: 30%;
+  width: 60%;
   max-width: 600px;
   background-color: #fff;
   border-radius: 10px;
@@ -99,13 +99,13 @@ header {
   padding: 10px;
 }
 
-.pokemon-list {
+.list-group {
   list-style-type: none;
   margin: 0;
   padding: 0;
 }
 
-.list-item {
+.list-group-item {
   display: grid;
   grid-template-columns: 1fr 1fr;
   background-color: #e6e6e6;
@@ -113,7 +113,7 @@ header {
   margin: 5px;
 }
 
-.info-button {
+.btn btn-secondary {
   text-decoration: underline;
   border: none;
   font-style: inherit;

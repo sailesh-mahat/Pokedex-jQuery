@@ -15,8 +15,8 @@ var pokemonRepository = (function() {
      //creating elements on DOM
      //formatting changed to jquery #3
     var $p = $('<p>' + pokemon.name + '</p>');
-    var $infoButton = $('<button class="info-button">view details</button>');
-    var $li = $('<li class="list-item"></li>');
+    var $infoButton = $('<button type="button" class="btn btn-secondary">view details</button>');
+    var $li = $('<li class="list-group-item"></li>');
   //  var $ul = $('<ul class="pokemon-list"></ul>');
 
     //appending them to DOM (formatting in jquery) #4
@@ -24,7 +24,7 @@ var pokemonRepository = (function() {
 
     $li.append($p);
     $li.append($infoButton);
-    $(".pokemon-list").append($li);
+    $(".list-group").append($li);
     $infoButton.on('click', function(event) {
       showDetails(pokemon);
     });
@@ -80,7 +80,7 @@ var pokemonRepository = (function() {
     $('#modal-container').html('');
     //creating the modal div:
     //in jquery format   #6
-    var modal = $('<div class="modal"></div>');
+    var modal = $('<div class="modal-dialog"></div>');
 
     //adding html elements to the modal container:
     var closeButtonElement = $('<button class="close-button">Close</button>'); //closing button
