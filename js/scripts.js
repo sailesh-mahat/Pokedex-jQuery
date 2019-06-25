@@ -17,13 +17,14 @@ var pokemonRepository = (function() {
     var $p = $('<p>' + pokemon.name + '</p>');
     var $infoButton = $('<button class="info-button">view details</button>');
     var $li = $('<li class="list-item"></li>');
-    var $ul = $('<ul class="pokemon-list"></ul>');
+  //  var $ul = $('<ul class="pokemon-list"></ul>');
 
     //appending them to DOM (formatting in jquery) #4
 
+
     $li.append($p);
     $li.append($infoButton);
-    $ul.append($li);
+    $(".pokemon-list").append($li);
     $infoButton.on('click', function(event) {
       showDetails(pokemon);
     });
@@ -67,10 +68,8 @@ var pokemonRepository = (function() {
     return $.ajax(item.detailsUrl).then(function (response) {     //jquery format #6
       item.imageUrl = response.sprites.front_default;
       item.height = response.height;
-      item.types = response.types.map(function (item) {return ' ' + item.type.name;
-    });
-      item.ability = response.abilities.map(function (item) {return ' ' + item.ability.name;
-    });
+      item.types = response.types.map(function (item) {return ' ' + item.type.name;});
+      item.ability = response.abilities.map(function (item) {return ' ' + item.ability.name;});
     }).catch(function (e) {
       console.error(e);
     });
@@ -90,12 +89,12 @@ var pokemonRepository = (function() {
     //creating element for name
     var nameElement = $('<h1>' +item.name+ '</h1>');
     //creating element for height
-    var heightElement = $('<p>' +item.height+ '</p>');
+    var heightElement = $('<p>' +'height: ' + item.height + '</p>');
     //creating element for image
     var imageElement = $('<img class="modal-image"></img>');
-    $imageElement.attr("src",item.imageUrl);    //attribute set in jquery format
+    imageElement.attr("src",item.imageUrl);    //attribute set in jquery format
     //creating element for type
-    var typesElement = $('<p>' +'Type: ' +item.types.join(', '));
+    var typesElement = $('<p>' +'Type: ' +item.types + '</p>');
 
     //appending element to modal and modal to modal container
     modal.append(closeButtonElement).append(nameElement).append(imageElement).append(typesElement).append(heightElement);  //chaining
@@ -114,13 +113,10 @@ var pokemonRepository = (function() {
     }
   });
   //hide modal if clicked outside of it  #9
-  $('#modal-container').on('click', (e) => {
-    // Since this is also triggered when clicking INSIDE the modal container,
-    // We only want to close if the user clicks directly on the overlay
-    var target = e.target;
-    if (target === $modalContainer) {
-      hideModal();
-    }
+  $(window).on('click', function(e) {
+            if (e.target!== $('#modal-container')) {
+                hideModal(true);
+            }
   });
   //return function:
   return {
