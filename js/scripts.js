@@ -77,7 +77,7 @@ var pokemonRepository = (function() {
 
   //show-modal function:
   function showModal(item) {
-    $modalContainer.innerHTML = '';
+    $('#modal-container').html('');
     //creating the modal div:
     //in jquery format   #6
     var modal = $('<div class="modal"></div>');
@@ -95,9 +95,11 @@ var pokemonRepository = (function() {
     imageElement.attr("src",item.imageUrl);    //attribute set in jquery format
     //creating element for type
     var typesElement = $('<p>' +'Type: ' +item.types + '</p>');
+    //creating element for abilities
+    var abilitiesElement = $('<p>' +'Abilities: ' +item.ability + '</p>');
 
     //appending element to modal and modal to modal container
-    modal.append(closeButtonElement).append(nameElement).append(imageElement).append(typesElement).append(heightElement);  //chaining
+    modal.append(closeButtonElement).append(nameElement).append(imageElement).append(typesElement).append(heightElement).append(abilitiesElement);  //chaining
     $modalContainer.append(modal).addClass('is-visible');
 
   }
@@ -113,10 +115,10 @@ var pokemonRepository = (function() {
     }
   });
   //hide modal if clicked outside of it  #9
-  $(window).on('click', function(e) {
-            if (e.target!== $('#modal-container')) {
-                hideModal(true);
-            }
+  $('#modal-container').on('click', function (event) {
+    if ($(event.target).is($modalContainer)) {
+      hideModal();
+    }
   });
   //return function:
   return {
