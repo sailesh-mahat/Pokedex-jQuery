@@ -17,7 +17,7 @@ var pokemonRepository = (function() {
     //appending them to DOM
     $li.append($p);
     $li.append($infoButton);
-    $(".list-group").append($li);
+    $('.list-group').append($li);
     $infoButton.on('click', function(event) {
       showDetails(pokemon);
     });
@@ -83,7 +83,7 @@ var pokemonRepository = (function() {
     var heightElement = $('<p>' +'height: ' + item.height + '</p>');
     //creating element for image
     var imageElement = $('<img class="modal-image"></img>');
-    imageElement.attr("src",item.imageUrl);    //attribute set in jquery format
+    imageElement.attr('src',item.imageUrl);    //attribute set in jquery format
     //creating element for type
     var typesElement = $('<p>' +'Type: ' +item.types + '</p>');
     //creating element for abilities
