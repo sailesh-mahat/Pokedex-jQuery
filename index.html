@@ -9,24 +9,17 @@
     <link rel="stylesheet" type="text/css" href="css/styles.css">
   </head>
   <body>
-    <nav class="navbar fixed-top navbar-dark bg-dark">
-      <span class="navbar-brand mb-0 h1">Pokedex</span>
-      <form class="form-inline">
-    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-  </form>
-    </nav>
+    <header>
+      <nav class="navbar fixed-top navbar-dark bg-dark">
+        <span class="navbar-brand mb-0 h1">Pokedex</span>
+        <form class="form-inline">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0 sr-only sr-only-focusable" type="submit">Search</button>
+    </form>
+      </nav>
+    </header>
     <div class = "page">
       <div class = "pokedex">
-        <header>
-          <h2>Pokedex</h2>
-        </header>
-        <div class = "menu">
-          <div class="details-menu-wrapper">
-          <div id="details-menu">
-          </div>
-        </div>
-         <div class="list-menu-wrapper">
           <div class = "list-menu">
             <ul class = "list-group">
               <!--<li><input type=button class="info-button" value=Bulbasaur>
@@ -43,8 +36,6 @@
               <li><input type=button class="info-button" value=Heatmor>-->
             </ul>
           </div>
-        </div>
-      </div>
     </div>
       <footer>
         <div class="page-footer">
@@ -59,20 +50,7 @@
   </div>
   <div id="modal-container" tabindex="-1" role="dialog">
     <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">Modal title</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-        <p>Modal body text goes here.</p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
-        </div>
+      <div class="modal-content sr-only sr-only-focusable">
       </div>
     </div>
   </div>

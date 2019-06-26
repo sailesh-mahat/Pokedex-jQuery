@@ -41,14 +41,12 @@ img.modal-image {
 .modal-dialog {              /* shown with modal-container.is-visible via appendChild */
   margin: auto;
   margin-top: 60px;
-  padding: 5%;
   width: 60%;
   max-width: 600px;
-  background-color: #fff;
   border-radius: 10px;
 }
 
-.close-button {       /* closing button for the modal container */
+.btn btn-secondary {       /* closing button for the modal container */
   float: right;
   border: 0;
   background: none;
@@ -61,36 +59,16 @@ img.modal-image {
   max-width: 500px;
   height: auto;
   margin: 0 auto;
+  margin-bottom: 10px;
 }
 
 .pokedex {
+  margin-top: 50px;
   display: grid;
 }
 
 header {
   padding-left: 10px;
-}
-
-.menu {
-  height: 100%;
-  display: grid;
-}
-
-.details-menu-wrapper {
-  height: 100%;
-  background-color: #bfbfbf;
-}
-
-#details-menu {
-  height: 100%;
-  background-color: #1a1a1a;
-  border-radius: 25px;
-  display: flex;
-}
-
-.list-menu-wrapper {
-  height: 100%;
-  background-color: #bfbfbf;
 }
 
 .list-menu {
