@@ -46,7 +46,7 @@ img.modal-image {
   border-radius: 10px;
 }
 
-.btn btn-secondary {       /* closing button for the modal container */
+.btn .btn-secondary {       /* closing button for the modal container */
   float: right;
   border: 0;
   background: none;
@@ -91,7 +91,7 @@ header {
   margin: 5px;
 }
 
-.btn btn-secondary {
+.btn .btn-secondary {
   text-decoration: underline;
   border: none;
   font-style: inherit;

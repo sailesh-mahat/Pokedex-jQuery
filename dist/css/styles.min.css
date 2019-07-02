@@ -1,9 +1,1 @@
-body{font-family:'arial',fantasy;color:#000}
-h1{text-align:center}
-h2{font-size:26px}
-p{font-size:16px;text-align:center}
-img.modal-image{display:block;margin-left:auto;margin-right:auto}
-#modal-container{display:none}
-#modal-container.is-visible{display:block;position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(0,0,0,0.5);z-index:1}.modal-dialog{margin:auto;margin-top:60px;width:60%;max-width:600px;border-radius:10px}.btn btn-secondary{float:right;border:0;background:none;color:#000;text-decoration:underline}.page{display:grid;max-width:500px;height:auto;margin:0 auto;margin-bottom:10px}.pokedex{margin-top:50px;display:grid}
-header{padding-left:10px}.list-menu{height:100%;background-color:#fff;padding:10px}.list-group{list-style-type:none;margin:0;padding:0}.list-group-item{display:grid;grid-template-columns:1fr 1fr;background-color:#e6e6e6;padding-left:30px;margin:5px}.btn btn-secondary{text-decoration:underline;border:none;font-style:inherit;font-size:14px;background-color:#e6e6e6;margin:0 auto}
-footer{display:grid;text-align:center}
+body{font-family:arial,fantasy;color:#000}h1{text-align:center}h2{font-size:26px}p{font-size:16px;text-align:center}img.modal-image{display:block;margin-left:auto;margin-right:auto}#modal-container{display:none}#modal-container.is-visible{display:block;position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(0,0,0,.5);z-index:1}.modal-dialog{margin:auto;margin-top:60px;width:60%;max-width:600px;border-radius:10px}.btn .btn-secondary{float:right;border:0;background:0 0;color:#000;text-decoration:underline}.page{display:grid;max-width:500px;height:auto;margin:0 auto;margin-bottom:10px}.pokedex{margin-top:50px;display:grid}header{padding-left:10px}.list-menu{height:100%;background-color:#fff;padding:10px}.list-group{list-style-type:none;margin:0;padding:0}.list-group-item{display:grid;grid-template-columns:1fr 1fr;background-color:#e6e6e6;padding-left:30px;margin:5px}.btn .btn-secondary{text-decoration:underline;border:none;font-style:inherit;font-size:14px;background-color:#e6e6e6;margin:0 auto}footer{display:grid;text-align:center}
